@@ -46,17 +46,12 @@ function solution(N, stages) {
     let fail = [];
     let dictionary = {};
     let answer = [];
+    let people = stages.length;
 
-    for (let i = 0; i < N; i++) {
-        let arr = [];
-        stages.map((a) => {
-            arr.push(a - 1);
-        });
-        stages = [...arr];
-        let count = stages.filter((element) => 0 === element).length;
-        fail.push(count / stages.length);
-        let filtered = stages.filter((element) => element !== 0);
-        stages = filtered;
+    for (let i = 1; i <= N + 1; i++) {
+        let count = stages.filter((element) => element === i).length;
+        fail.push(count / people);
+        people -= count;
     }
 
     for (let i = 1; i <= N; i++) {
@@ -70,3 +65,5 @@ function solution(N, stages) {
     }
     return answer;
 }
+
+console.log(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]));
