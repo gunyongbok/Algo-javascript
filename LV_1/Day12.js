@@ -19,7 +19,6 @@ function solution1(s) {
             }
         }
     }
-
     return answer;
 }
 
