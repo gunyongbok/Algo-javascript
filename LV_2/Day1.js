@@ -18,5 +18,3 @@ function solution(s) {
     }
     return newArr.join(' ');
 }
-
-solution('3people unFollowed me');
