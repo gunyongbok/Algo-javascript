@@ -14,5 +14,3 @@ function solution(s) {
     }
     return [count, deleteZero];
 }
-
-solution('110010101001');
